@@ -3,11 +3,11 @@ require "catholic/version"
 module Catholic
   module ObjectExtensions
 
-    attr_accessor :sin
+    attr_writer :sin
 
-    def initialize
-      self.sin = true
-      super()
+    def sin
+      @sin = true if !defined?( @sin )
+      return @sin
     end
 
     def has_sin?

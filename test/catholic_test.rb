@@ -18,4 +18,9 @@ class CatholicTest < MiniTest::Test
     assert o.has_sin? == false, 'Repenting did not absolve object of it\'s sin'
   end
 
+  def test_progeny_inherits_sins_of_the_father
+    a = Array.new
+    assert a.sin, "Your object's progeny didn't inherit the iniquity of its father."
+  end
+
 end
