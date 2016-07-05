@@ -4,16 +4,16 @@ module Catholic
     attr_writer :sin
 
     def sin
-      @sin = true if !defined?( @sin )
+      @sin = 1 if !defined?( @sin )
       return @sin
     end
 
     def has_sin?
-      return self.sin ? true : false
+      return self.sin >= 1 ? true : false
     end
 
     def repent
-      self.sin = false
+      self.sin = 0
     end
 
   end
