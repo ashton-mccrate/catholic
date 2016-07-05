@@ -29,4 +29,9 @@ class CatholicTest < MiniTest::Test
     assert o.sin == 4, "Object cannot accumulate sin"
   end
 
+  def test_numbers_can_sin
+    skip("Pending solution for: RuntimeError: can't modify frozen Fixnum")
+    assert 3.has_sin? == true, "Number is not able to have sin"
+  end
+
 end
