@@ -34,4 +34,9 @@ class CatholicTest < MiniTest::Test
     assert 3.has_sin? == true, "Number is not able to have sin"
   end
 
+  def test_you_cant_be_catholic_without_the_guilt
+    o = Object.new
+    assert o.class.included_modules.include?( Catholic::CripplingGuilt ), "Guilt not assumed"
+  end
+
 end

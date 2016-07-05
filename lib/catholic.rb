@@ -1,6 +1,10 @@
 module Catholic
   module ObjectExtensions
 
+    def self.included(receiver)
+      receiver.send :include, CripplingGuilt
+    end
+
     attr_writer :sin
 
     def sin
@@ -16,6 +20,9 @@ module Catholic
       self.sin = 0
     end
 
+  end
+
+  module CripplingGuilt
   end
 
   ::Object.send(:include, ObjectExtensions)
